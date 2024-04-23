@@ -118,11 +118,11 @@ export const Grid_Template: React.FC<Props> = ({ items, type }) => {
             </div>)
             }
             <br />
-            <div>
+            <div className='text-center'>
                 <button className='btn btn-secondary' onClick={handlePrevPage} disabled={page === 1}>Previous Page</button>
                 <button className='btn btn-secondary' onClick={handleNextPage} disabled={page===10}>Next Page</button>
             </div>
-            
+            <br />
         </>
     )
 }
