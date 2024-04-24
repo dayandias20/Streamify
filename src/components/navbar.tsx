@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation  } from 'react-router-dom';
 import { Home } from '../pages/home/home';
 import { Login } from '../pages/auth/login';
 import { Movies } from '../pages/movies/movies';
@@ -19,6 +19,9 @@ export const Navbar = () => {
     const [ searchResults, setSearchResults ] = useState<Item[]>([]);
     const [ searchQuery, setSearchQuery ] = useState('');
     const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1`;
+
+    const location = useLocation();
+    const [currentPage, setCurrentPage] = useState(location.pathname);
 
     const search = async () => {
         try {
@@ -42,15 +45,16 @@ export const Navbar = () => {
 
     useEffect(() => {
         search();
-      },[]);
+        setCurrentPage(location.pathname);
+      },[location.pathname]);
 
     return(
         <div>
             {/* <Router> */}
-                <div className="App">
+                <div className={currentPage === '/login' ? "App bg_black" : 'App'} >
                     <nav className="navbar navbar-expand-lg" >
                         <div className="container-fluid">
-                            <Link className="navbar-brand" to="/">Streamify</Link>
+                            <Link className={currentPage ==='/login' ? "navbar-brand" :"navbar-brand" }  style={{color:currentPage==='/login' ? 'green' : 'black'}} to="/">Streamify</Link>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span className="navbar-toggler-icon"></span>
                             </button>
