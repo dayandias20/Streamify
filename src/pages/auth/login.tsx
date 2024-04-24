@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useAuth, User } from './useAuth';
-import '../pages.css';
-import './login.css';
 
 export const Login = () => {
     const { user, login, logout } = useAuth();

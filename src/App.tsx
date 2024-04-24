@@ -70,6 +70,7 @@ function App() {
             <Route path='search/:queryString' element={<Search_Page />}/>
             <Route path='search/' element={<Search_Page/>}/>
           </Routes>
+          <br /><br />
         <div style={{ width:'100%'}}>
           { isLoading ? (<Loading></Loading>) :  
           (<Genre_Template genre_obj={genres}></Genre_Template>)}
@@ -78,6 +79,7 @@ function App() {
       </Router>
         
         </div>  
+
     </div>
   );
 }

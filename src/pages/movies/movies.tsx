@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Grid_Template, Item } from '../../components/grid_template';
-import '../pages.css'
+
 export const Movies = () => {
 
     const [ moviedata, setMoviedata ] = useState([]);

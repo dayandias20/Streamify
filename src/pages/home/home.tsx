@@ -5,7 +5,6 @@ import { Row_Template } from '../../components/row_template';
 import { Carousel } from '../../components/carousel';
 import { People_Row_Template } from '../../components/people_row_template';
 import Loading from '../../components/loading';
-import '../pages.css';
 
 export const Home = () => {
     
@@ -59,7 +58,7 @@ export const Home = () => {
       },[]);
 
     return (
-      <div style={{ width:"100%" }}> 
+      <div style={{ width:"100%" }} className='bg_black'> 
         <div className='row row-cols-1'>
           <Carousel></Carousel>
             <br></br> 

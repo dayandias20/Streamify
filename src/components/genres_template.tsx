@@ -12,7 +12,7 @@ interface Props {
 export const Genre_Template: React.FC<Props> = ({ genre_obj }) => {
    
     return (
-        <div className="bg_black p-4 text-center" style={{ width:"100%"}}>
+        <div className="bg_black p-4 text-center" style={{ width:"100%", borderTopStyle:"inset"}}>
             <div className="row row-cols-1" style={{ width:"100%", justifyContent:"center"}}>
                 <h3 className="display-3 mb-4 genres_font">Select from a wide variety of genres</h3>
             </div>

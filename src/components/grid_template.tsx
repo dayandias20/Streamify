@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './components.css';
 
 export interface Item {
     genre: string;
@@ -95,7 +94,7 @@ export const Grid_Template: React.FC<Props> = ({ items, type }) => {
                         </div>
                     )) }
                 </div>
-            </div>) : ( <div className="container">
+            </div>) : ( <div className="container bg_black">
                 <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 ">
                     { moviedata.map(item => (
                         <div key={item.id} className="col">
