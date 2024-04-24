@@ -65,14 +65,22 @@ export const Movie_Details = () => {
             <div className='text-center mt-4 mb-4 banner'><h1>{type?.toUpperCase()} Details Page</h1></div>
             
             <div className='container d-flex justify-content-center'>
-            <div className="card" style={{width: '50%'}}>
-            <img src={`https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`} alt={movieDetails?.name} className="movie-card__image" />
-                <div className="card-body">
-                    <h2 className="card-title">{movieDetails?.original_title}</h2>
-                    <p className="card-text">Release Date: {movieDetails?.release_date}</p>
-                    <p className="card-text">{movieDetails?.overview}</p>
+                <div className='polaroid'>
+                    {/* <div className="card col" style={{width: '50%'}}> */}
+                        <img src={`https://image.tmdb.org/t/p/w500${movieDetails?.poster_path}`} alt={movieDetails?.name} className="movie-card__image" style={{ height:"600px",width:"auto"}}/>
+                        <br/>
+                    {/* </div> */}
+                    
+                        <div className="pol_container m-4 ">
+                            <div className='card p-4'>
+                            <h2 className="card-title">{movieDetails?.original_title}</h2>
+                            <p className="card-text">Release Date: {movieDetails?.release_date}</p>
+                            <p className="card-text">{movieDetails?.overview}</p>
+                            <br />
+                            </div>
+                            
+                        </div>
                 </div>
-            </div>
             </div>
         </div>
     );

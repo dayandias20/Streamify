@@ -71,7 +71,7 @@ export const Grid_Template: React.FC<Props> = ({ items, type }) => {
                 <button className='btn btn-secondary' onClick={handlePrevPage} disabled={page === 1}>Previous Page</button>
                 <button className='btn btn-secondary' onClick={handleNextPage} disabled={page===10}>Next Page</button>
             </div>
-            <br></br>
+            <br></br><br />
             
             {
                 moviedata.length <0 ? ( <div className="container">
