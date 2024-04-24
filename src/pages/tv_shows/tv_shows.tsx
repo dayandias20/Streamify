@@ -27,7 +27,7 @@ export const TV_Shows = () => {
       },[]);
 
     return (
-        <div>
+        <div className='bg_space_2'>
             <Grid_Template items={moviedata} type="tv"></Grid_Template>
         </div>
     );

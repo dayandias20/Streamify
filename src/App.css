@@ -14,6 +14,12 @@
 .bg_black {
   background-color: black;
 }
+.bg_space_1 {
+  background-image: url(../public/sapce1.jpg);
+} 
+.bg_space_2 {
+  background-image: url(../public/sapce2.jpg);
+}
 .text_white {
   color: white;
 }

@@ -26,7 +26,7 @@ export const Movies = () => {
       },[]); 
 
     return (
-        <div>
+        <div className='bg_space_1'>
             <Grid_Template items={moviedata} type="movie"></Grid_Template>
         </div>
     );

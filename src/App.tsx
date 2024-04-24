@@ -46,7 +46,7 @@ function App() {
   return (
     <div  className="app-container" style={{ width:"100%", justifyContent:"center", flexGrow:1}}>
       
-      <div className='content'> 
+      <div className='content bg_black'> 
        
       <Router>
         <Navbar/>              
@@ -70,7 +70,7 @@ function App() {
             <Route path='search/:queryString' element={<Search_Page />}/>
             <Route path='search/' element={<Search_Page/>}/>
           </Routes>
-          <br /><br />
+          <br />
         <div style={{ width:'100%'}}>
           { isLoading ? (<Loading></Loading>) :  
           (<Genre_Template genre_obj={genres}></Genre_Template>)}
