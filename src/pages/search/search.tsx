@@ -123,8 +123,8 @@ export const Search_Page = () => {
                 <div> 
                      {selectedOption === 'option_movie' ? (<h1 style={{color:'white'}}> Search Results for  <span className="badge text-bg-dark">{queryString?.toLocaleUpperCase()}</span> Movie </h1>)
                      
-                    : selectedOption === 'option_tv' ? (<h1> Search Results for  <span className="badge text-bg-dark">{queryString?.toLocaleUpperCase()}</span> TV Show </h1>)  
-                    : (<h1> TOP RATED TV SHOWS </h1>)
+                    : selectedOption === 'option_tv' ? (<h1 style={{color:'white'}}> Search Results for  <span className="badge text-bg-dark">{queryString?.toLocaleUpperCase()}</span> TV Show </h1>)  
+                    : ( <h1 style={{color:'white'}}> TOP RATED TV SHOWS </h1>)
                 }   
                 </div>
             </div>
