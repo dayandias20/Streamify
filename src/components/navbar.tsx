@@ -50,54 +50,38 @@ export const Navbar = () => {
 
     return(
         <div>
-            {/* <Router> */}
-                <div className={currentPage === '/login' ? "App bg_black" : 'App'} >
-                    <nav className="navbar navbar-expand-lg" >
-                        <div className="container-fluid">
-                            <Link className={currentPage ==='/login' ? "navbar-brand" :"navbar-brand" }  style={{color:currentPage==='/login' ? 'green' : 'black'}} to="/">Streamify</Link>
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon"></span>
-                            </button>
-                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                                <ul className="nav nav-tabs me-auto mb-2 mb-lg-0">
-                                    
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/movies"> Movies </Link>
-                                    </li>
-                                    <li className="nav-item">
-                                        <Link className="nav-link" to="/tv_shows"> TV Shows </Link>
-                                    </li>
-                                    <li className="nav-item"> 
-                                        {user?.name}
-                                    </li>
-                                    
-                                    { user ? ( 
-                                        <li className="nav-item">
-                                            <Link className="nav-link" to="/login"> Logout </Link>
-                                        </li>
-                                    ) : (
-                                        <li className="nav-item">
-                                            <Link className="nav-link" to="/login"> Login </Link>
-                                        </li>
-                                    )}
-                                    
-                                </ul>
-                                <form className="d-flex" role="search" onChange={(e) => {
-                                    if (e.target instanceof HTMLInputElement) {
-                                        setSearchQuery(e.target.value);
-                                    }
+            
+            <div className={currentPage === '/login' ? "App bg_black" : 'App'} >
+                <nav className="navbar navbar-expand-lg" >
+                    <div className="container-fluid">
+                        <Link className={currentPage ==='/login' ? "navbar-brand" :"navbar-brand" }  style={{color:currentPage==='/login' ? 'green' : 'black'}} to="/">Streamify</Link>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="navbar-collapse p-4" id="navbarSupportedContent">
+                            <ul className="nav nav-tabs me-auto mb-2 mb-lg-0">
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/movies"> Movies </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/tv_shows"> TV Shows </Link>
+                                </li>                                                              
+                            </ul>
+                            <form className="d-flex" role="search" onChange={(e) => {
+                                if (e.target instanceof HTMLInputElement) {
+                                    setSearchQuery(e.target.value);
+                                }
                                 }} onSubmit={(e)=>{e.preventDefault(); search(); }}>
-                                    <input className="form-control me-2" type="search" placeholder="Search Movie" aria-label="Search" value={searchQuery} />
-                                    <Link to={`/search/${searchQuery}`}>
-                                    <button className="btn btn-outline-success" type="submit" onSubmit={search}
-                                    onClick={() => {setSearchQuery("")}}>Search</button>
-                                    </Link>
-                                </form>
-                            </div>
+                                <input className="form-control me-2" type="search" placeholder="Search Movie" aria-label="Search" value={searchQuery} />
+                                <Link to={`/search/${searchQuery}`}>
+                                <button className="btn btn-outline-success" type="submit" onSubmit={search}
+                                onClick={() => {setSearchQuery("")}}>Search</button>
+                                </Link>
+                            </form>
                         </div>
-                    </nav>
-                    
-                </div>
+                    </div>
+                </nav>    
+            </div>
         </div>
     );
 } 

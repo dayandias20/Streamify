@@ -89,18 +89,19 @@ export const Search_Page = () => {
 
     return(
         <>
+        <center className="bg_space_3">
             <br />
             <div className="text-center mt-4 mb-4 banner">
                 <h1>Search Page</h1>
             </div>
 
-            <div className="row row-cols-3 row-cols-md-3 row-cols-lg-5 g-4">
+            <div className="row row-cols-3 row-cols-md-3 row-cols-lg-5 g-4 " style={{color:'white'}}>
             
             {!isSmallScreen && <div className="col"></div>}
                 <div className="col">
                     <input id="option_movie" className="form-check-input" type="radio" name="search_type" value="option_movie" onChange={handleOptionChange} >
                     </input>
-                    <label htmlFor="option_movie" className="form-check-label"> Movies </label>
+                    <label htmlFor="option_movie" className="form-check-label" > Movies </label>
                 </div>
                 
                 <div className="col">
@@ -120,7 +121,7 @@ export const Search_Page = () => {
             <br />
             <div className="container">
                 <div> 
-                     {selectedOption === 'option_movie' ? (<h1> Search Results for  <span className="badge text-bg-dark">{queryString?.toLocaleUpperCase()}</span> Movie </h1>)
+                     {selectedOption === 'option_movie' ? (<h1 style={{color:'white'}}> Search Results for  <span className="badge text-bg-dark">{queryString?.toLocaleUpperCase()}</span> Movie </h1>)
                      
                     : selectedOption === 'option_tv' ? (<h1> Search Results for  <span className="badge text-bg-dark">{queryString?.toLocaleUpperCase()}</span> TV Show </h1>)  
                     : (<h1> TOP RATED TV SHOWS </h1>)
@@ -164,11 +165,14 @@ export const Search_Page = () => {
                 )
                 }
                 <br />
+                
                 <div>
                     <button className='btn btn-secondary' onClick={handlePrevPage} disabled={page === 1}>Previous Page</button>
                     <button className='btn btn-secondary' onClick={handleNextPage} disabled={page===10 || moviedata.length<=10}>Next Page</button>
                 </div>
+                
             </>
+            </center>
         </>
         );
 };
